@@ -44,7 +44,7 @@ if __name__ == "__main__":
     mean = np.mean(mnist_data.numpy())
     std = np.std(mnist_data.numpy())
 
-    img = Image.open('img_12.jpg').convert('L')
+    img = Image.open('./images/img_12.jpg').convert('L')
     img_array = np.array(img)
     img_norm = (img_array - mean) / std
     resized_img = Image.fromarray(img_norm)
@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
     print(torch.argmax(clf(img_tensor)))
 
-    # training
+    # TRAINING NN
     # for epoch in range(10):
     #     for batch in dataset:
     #         X,y = batch
